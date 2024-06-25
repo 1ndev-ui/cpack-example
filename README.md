@@ -34,8 +34,11 @@ An example CMake project to demonstrate creating packages with CPack.
 
 ## Generate .deb package
 ```
-cd cpack-example
-mkdir build && cd build && cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. && cmake --build . && cpack -G DEB
+cd cpack-example && \
+mkdir build && cd build && \
+cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. && \
+cmake --build . && \
+cpack -G DEB
 ```
 
 ## Some issues
