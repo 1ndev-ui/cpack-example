@@ -2,6 +2,35 @@
 
 An example CMake project to demonstrate creating packages with CPack.
 
+## Source Tree
+
+├── cmake
+│   ├── InstallingConfigs.cmake
+│   ├── InstallingGeneral.cmake
+│   └── Packing.cmake
+├── libraries
+│   ├── AnotherLibrary
+│   │   ├── include
+│   │   │   └── another.h
+│   │   ├── src
+│   │   │   ├── another.cpp
+│   │   │   └── things.h
+│   │   ├── CMakeLists.txt
+│   │   └── Config.cmake.in
+│   ├── SomeLibrary
+│   │   ├── include
+│   │   │   └── some.h
+│   │   ├── src
+│   │   │   ├── some.cpp
+│   │   │   └── things.h
+│   │   ├── CMakeLists.txt
+│   │   └── Config.cmake.in
+│   └── CMakeLists.txt
+├── CMakeLists.txt
+├── LICENSE
+├── README.md
+└── main.cpp
+
 ## Some issues
 
 - libraries are hardcoded to `STATIC`, which is rarely a good idea. But at least it is somewhat understandable in case of Windows, because there are no DLL exports;
@@ -12,4 +41,3 @@ An example CMake project to demonstrate creating packages with CPack.
 - the libraries targets namespace is set in every subproject. Instead it should be set just once in the top-level project;
 - `CMAKE_MODULE_PATH` is set in every subproject. There is no need for that, it is enough to set it once in the top-level project;
 - there should be no checks for top-level project and its variables, as libraries are already part of the project, and they shouldn't be meant to be built "separately" (*there is `--target` for that*).
-
