@@ -3,7 +3,7 @@
 An example CMake project to demonstrate creating packages with CPack.
 
 ## Source Tree
-
+```
 ├── cmake
 │   ├── InstallingConfigs.cmake
 │   ├── InstallingGeneral.cmake
@@ -30,6 +30,7 @@ An example CMake project to demonstrate creating packages with CPack.
 ├── LICENSE
 ├── README.md
 └── main.cpp
+```
 
 ## Some issues
 
