@@ -32,6 +32,12 @@ An example CMake project to demonstrate creating packages with CPack.
 └── main.cpp
 ```
 
+## Generate .deb package
+```
+cd cpack-example
+mkdir build && cd build && cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. && cmake --build . && cpack -G DEB
+```
+
 ## Some issues
 
 - libraries are hardcoded to `STATIC`, which is rarely a good idea. But at least it is somewhat understandable in case of Windows, because there are no DLL exports;
